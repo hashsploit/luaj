@@ -70,17 +70,17 @@
 			<pathelement path="lib/midpapi20.jar"/>
 			<pathelement path="lib/mmapi.jar"/>
 		</path>
-		<javac destdir="build/jse/classes" encoding="utf-8" source="1.3" target="1.3"
+		<javac destdir="build/jse/classes" encoding="utf-8" source="1.8" target="1.8"
 			classpath="lib/bcel-5.2.jar"
 			debug="on"
 			srcdir="build/jse/src"
 			excludes="**/script/*,**/Lua2Java*,**/server/*,lua*"/>
-		<javac destdir="build/jse/classes" encoding="utf-8" source="1.5" target="1.5"
+		<javac destdir="build/jse/classes" encoding="utf-8" source="1.8" target="1.8"
 			classpath="build/jse/classes"
 			debug="on"
 			srcdir="build/jse/src"
 			includes="**/script/*,**/Lua2Java*,**/server/*"/>
-		<javac destdir="build/jse/classes" encoding="utf-8" source="1.3" target="1.3"
+		<javac destdir="build/jse/classes" encoding="utf-8" source="1.8" target="1.8"
 			classpath="build/jse/classes"
 			debug="on"
 			srcdir="build/jse/src"
@@ -96,12 +96,6 @@
 		</jar>
 	</target>
 
-	<target name="jar-jse-sources" depends="compile">
-		<jar destfile="${jar.name.sources}">
-		    <fileset dir="build/jse/src"/>
-		</jar>
-	</target>
-
 	<target name="doc">
 		<delete dir="docs/api"/>
 		<mkdir dir="docs/api"/>
@@ -111,8 +105,8 @@
 				version="true"
 				use="true"
 				windowtitle="Luaj API">
-		    <fileset dir="src/core" defaultexcludes="yes" includes="org/luaj/vm2/*.java,org/luaj/vm2/compiler/LuaC.java,org/luaj/vm2/lib/*.java"/>
-		    <fileset dir="src/jse" defaultexcludes="yes" includes="org/luaj/vm2/lib/jse/*.java,org/luaj/vm2/luajc/LuaJC.java,org/luaj/vm2/server/*.java"/>
+		    <fileset dir="src/core" defaultexcludes="no" includes="org/luaj/vm2/*.java,org/luaj/vm2/compiler/LuaC.java,org/luaj/vm2/lib/*.java"/>
+		    <fileset dir="src/jse" defaultexcludes="no" includes="org/luaj/vm2/lib/jse/*.java,org/luaj/vm2/luajc/LuaJC.java,org/luaj/vm2/server/*.java"/>
 			<doctitle><![CDATA[<h1>Luaj API</h1>]]></doctitle>
 			<bottom><![CDATA[<i>Copyright &#169; 2007-2015 Luaj.org. All Rights Reserved.</i>]]></bottom>
 			<tag name="todo" scope="all" description="To do:"/>
